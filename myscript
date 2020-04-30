@@ -4,19 +4,19 @@ pipeline {
         stage('clone-repo') { 
             steps {
                 bat "git clone https://github.com/chhayanikam/simple-java-maven-app.git"
-                bat "mvn clean -f simple-java-maven-app"
+                bat "mvn clean simple-java-maven-app"
                 //bat 'start cmd.exe /c date'
             }
         }
         stage('Test') { 
             steps {
-                bat "mvn test -f my-app" 
+                bat "mvn test my-app" 
              // bat 'start cmd.exe /c time'
             }
         }
         stage('Deploy') { 
             steps {
-              bat "mvn package -f my-app" 
+              bat "mvn package my-app" 
              // bat 'start cmd.exe /c dir'
             }
         }
